@@ -31,5 +31,10 @@ namespace Kentor.AuthServices.Configuration
         /// events.
         /// </summary>
         KentorAuthServicesNotifications Notifications { get; }
+
+        /// <summary>
+        /// Overrides the default signature checking on LogOffCallback
+        /// </summary>
+        bool IgnoreLogOffCallbackSignatureCheck { get; set; }
     }
 }

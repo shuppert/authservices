@@ -70,7 +70,11 @@ namespace Kentor.AuthServices.WebSso
             if (binding != null)
             {
                 var unbindResult = binding.Unbind(request, options);
-                VerifyMessageIsSigned(unbindResult, options);
+
+                if (! options.IgnoreLogOffCallbackSignatureCheck)
+                {
+                    VerifyMessageIsSigned(unbindResult, options);
+                }                
                 switch (unbindResult.Data.LocalName)
                 {
                     case "LogoutRequest":

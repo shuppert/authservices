@@ -59,6 +59,11 @@ namespace Kentor.AuthServices.Configuration
         private readonly IdentityProviderDictionary identityProviders = new IdentityProviderDictionary();
 
         /// <summary>
+        /// Overrides the default signature checking on LogOffCallback
+        /// </summary>
+        public bool IgnoreLogOffCallbackSignatureCheck { get; set; } = false;
+
+        /// <summary>
         /// Available identity providers.
         /// </summary>
         public IdentityProviderDictionary IdentityProviders

@@ -86,6 +86,11 @@ namespace Kentor.AuthServices.Owin
         }
 
         /// <summary>
+        /// Overrides the default signature checking on LogOffCallback
+        /// </summary>
+        public bool IgnoreLogOffCallbackSignatureCheck { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the type used to secure data handled by the middleware.
         /// </summary>
         internal IDataProtector DataProtector { get; set; }
